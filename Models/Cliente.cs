@@ -5,16 +5,16 @@ namespace ProjetoIHC.Models
     public class Cliente
     {
         [Key]
-        public int id { get; set; }
+        public int ID { get; set; }
 
         [Required(ErrorMessage = "Informe seu nome")]
         [Display(Name = "Nome")]
         [StringLength(100)]
-        public string name { get; set; }
+        public string Nome { get; set; }
 
         [Required(ErrorMessage = "Informe sua data de nascimento")]
         [Display(Name = "Data de nascimento")]
-        public DateOnly dataNascimento { get; set; }
+        public DateOnly DataNascimento { get; set; }
 
         [Required(ErrorMessage = "Informe seu RG")]
         [Display(Name = "RG")]
@@ -26,26 +26,7 @@ namespace ProjetoIHC.Models
         [StringLength(11)]
         public string CPF { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Informe o endereço")]
-        [Display(Name = "Endereço")]
-        [StringLength(100)]
-        public string Logradouro { get; set; } = string.Empty;
-        
-        [Required(ErrorMessage = "Informe o número")]
-        [Display(Name = "Número")]
-        [StringLength(30)]
-        public string Numero { get; set; } = string.Empty;
-        
-        [Required(ErrorMessage = "Informe o bairro")]
-        [Display(Name = "Bairro")]
-        [StringLength(30)]
-        public string Bairro { get; set; } = string.Empty;
-        
-        [Required(ErrorMessage = "Informe a cidade")]
-        [Display(Name = "Cidade")]
-        [StringLength(30)]
-        public string Cidade { get; set; } = string.Empty;
-        
+
         [Required(ErrorMessage = "Informe a UF")]
         [Display(Name = "UF")]
         [StringLength(30)]
@@ -55,5 +36,29 @@ namespace ProjetoIHC.Models
         [Display(Name = "CEP")]
         [StringLength(10)]
         public string CEP { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Informe a cidade")]
+        [Display(Name = "Cidade")]
+        [StringLength(30)]
+        public string Cidade { get; set; } = string.Empty;
+        
+        [Required(ErrorMessage = "Informe o endereço")]
+        [Display(Name = "Endereço")]
+        [StringLength(100)]
+        public string Logradouro { get; set; } = string.Empty;
+        
+        [Required(ErrorMessage = "Informe o número")]
+        [Display(Name = "Número")]
+        [StringLength(30)]
+        public string Numero { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Informe o seu complemento")]
+        [Display(Name = "Complemento")]
+        public string? Complemento { get; set; }
+        
+        [Required(ErrorMessage = "Informe o bairro")]
+        [Display(Name = "Bairro")]
+        [StringLength(30)]
+        public string Bairro { get; set; } = string.Empty;
     }
 }
