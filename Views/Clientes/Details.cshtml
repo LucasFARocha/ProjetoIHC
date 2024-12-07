@@ -1,11 +1,25 @@
 ﻿@model ProjetoIHC.Models.Cliente
 
 @{
-    ViewData["Title"] = "Details";
+    var action = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+
+    if (action == "details")
+    {
+        ViewData["Title"] = "Detalhes";
+        <h1>Detalhes</h1>
+    }
+    else
+    {
+        ViewData["Title"] = "Excluir cliente";
+        <h1>Excluir</h1>
+    }
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detalhes</h1>
+@* <h1>Detalhes</h1> *@
+@if(action == "delete"){
+    <h3>Você tem certeza de que deseja excluir este cliente?</h3>
+}
 
 <div>
     <h4>Cliente</h4>
@@ -115,6 +129,17 @@
 
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-    <a asp-action="Index">Retornar à lista</a>
+    @if(action == "delete")
+    {
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            <a asp-action="Index">Retornar à lista</a>
+        </form>
+    }
+    else
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> <span>|</span> // Por algum motivo este trecho dá erro sem a tag span
+        <a asp-action="Index">Retornar à lista</a>
+    }
 </div>

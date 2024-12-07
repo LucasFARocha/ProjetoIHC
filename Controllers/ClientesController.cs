@@ -131,7 +131,7 @@ namespace ProjetoIHC.Controllers
                 return NotFound();
             }
 
-            return View(cliente);
+            return View("Details", cliente);
         }
 
         // POST: Clientes/Delete/5
