@@ -24,7 +24,7 @@ namespace ProjetoIHC.Models
 
         [Required(ErrorMessage = "Informe seu CPF")]
         [Display(Name = "CPF")]
-        [StringLength(11)]
+        [StringLength(15)]
         public string CPF { get; set; } = string.Empty;
 
 
@@ -32,7 +32,7 @@ namespace ProjetoIHC.Models
         [Display(Name = "UF")]
         [StringLength(30)]
         public string UF { get; set; } = string.Empty;
-        
+
         [Required(ErrorMessage = "Informe seu CEP")]
         [Display(Name = "CEP")]
         [StringLength(10)]
@@ -42,23 +42,22 @@ namespace ProjetoIHC.Models
         [Display(Name = "Cidade")]
         [StringLength(30)]
         public string Cidade { get; set; } = string.Empty;
-        
+
         [Required(ErrorMessage = "Informe seu bairro")]
         [Display(Name = "Bairro")]
         [StringLength(30)]
         public string Bairro { get; set; } = string.Empty;
-        
+
         [Required(ErrorMessage = "Informe seu endereço")]
         [Display(Name = "Endereço")]
         [StringLength(100)]
         public string Logradouro { get; set; } = string.Empty;
-        
+
         [Required(ErrorMessage = "Informe o número")]
         [Display(Name = "Número")]
         [StringLength(30)]
         public string Numero { get; set; } = string.Empty;
-
-        [Required(ErrorMessage = "Informe o complemento")]
+                
         [Display(Name = "Complemento")]
         [StringLength(30)]
         public string? Complemento { get; set; }

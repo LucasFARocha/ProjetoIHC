@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoIHC.Data;
 
@@ -11,9 +12,11 @@ using ProjetoIHC.Data;
 namespace ProjetoIHC.Migrations
 {
     [DbContext(typeof(ProjetoIHCContext))]
-    partial class ProjetoIHCContextModelSnapshot : ModelSnapshot
+    [Migration("20241207181642_alteracao")]
+    partial class alteracao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

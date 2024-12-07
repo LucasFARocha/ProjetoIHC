@@ -12,8 +12,8 @@ using ProjetoIHC.Data;
 namespace ProjetoIHC.Migrations
 {
     [DbContext(typeof(ProjetoIHCContext))]
-    [Migration("20241207021441_Cliente")]
-    partial class Cliente
+    [Migration("20241207175548_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,8 +45,8 @@ namespace ProjetoIHC.Migrations
 
                     b.Property<string>("CPF")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Cidade")
                         .IsRequired()

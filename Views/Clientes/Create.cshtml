@@ -27,7 +27,7 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        @using (Html.BeginForm(action, "Clientes", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+        @using (Html.BeginForm(null, "Clientes", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
         {
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row">
@@ -71,7 +71,7 @@
                 <div class="col-md-2">
                     <div class="form-group">
                         <label asp-for="CEP" class="control-label"></label>
-                        <input asp-for="CEP" class="form-control" />
+                        <input asp-for="CEP" class="form-control" onblur="SearchZipCode()" />
                         <span asp-validation-for="CEP" class="text-danger"></span>
                     </div>
                 </div>
@@ -117,10 +117,10 @@
                         <label asp-for="EstadoCivil" class="control-label"></label>
                         <select asp-for="EstadoCivil" class="form-control" onblur="SearchZipCode()" >
                             <option value="" disabled>Selecione uma opção</option>
-                            <option value="casado">Casado(a)</option>
-                            <option value="solteiro">Solteiro(a)</option>
-                            <option value="divorciado">Divorciado(a)</option>
-                            <option value="viuvo">Viúvo(a)</option>
+                            <option value="Solteiro(a)">Solteiro(a)</option>
+                            <option value="Casado(a)">Casado(a)</option>
+                            <option value="Divorciado(a)">Divorciado(a)</option>
+                            <option value="Viúvo(a)">Viúvo(a)</option>
                         </select>
                         <span asp-validation-for="EstadoCivil" class="text-danger"></span>
                     </div>
@@ -155,4 +155,7 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ImaskScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ImaskClientePartial");}
+    @{await Html.RenderPartialAsync("_CEPPartial");}
 }
