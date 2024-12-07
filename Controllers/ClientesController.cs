@@ -34,7 +34,7 @@ namespace ProjetoIHC.Controllers
             }
 
             var cliente = await _context.Cliente
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace ProjetoIHC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id,Nome")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace ProjetoIHC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,name")] Cliente cliente)
         {
-            if (id != cliente.id)
+            if (id != cliente.Id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace ProjetoIHC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClienteExists(cliente.id))
+                    if (!ClienteExists(cliente.Id))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace ProjetoIHC.Controllers
             }
 
             var cliente = await _context.Cliente
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
                 return NotFound();
@@ -151,7 +151,7 @@ namespace ProjetoIHC.Controllers
 
         private bool ClienteExists(int id)
         {
-            return _context.Cliente.Any(e => e.id == id);
+            return _context.Cliente.Any(e => e.Id == id);
         }
     }
 }
