@@ -5,12 +5,9 @@
     // Layout = "~/Views/Shared/_Layout.cshtml";
 
     var action = ViewContext.RouteData.Values["Action"].ToString().ToLower();
-    // string metodo = "Edit";
 
     if (action == "create")
     {
-        // metodo = "Create";
-
         ViewData["Title"] = "Adicionar cliente";
         <h1>Adicionar</h1>
     }
